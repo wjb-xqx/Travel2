@@ -7,9 +7,11 @@
            <span class="iconfont">&#xe632;</span>
            输入城市、游玩、景点主题
        </div>
-       <div class="header-right">城市
+      <router-link to="/City">
+           <div class="header-right">北京
            <span class="iconfont">&#xe634;</span>
        </div>
+      </router-link>
     </div>
 </template>
 
@@ -37,6 +39,7 @@ export default {
             width :1.24rem
             float: right 
             text-align:center
+            color:#fff
         .header-input
             flex :1
             line-height:.64rem
