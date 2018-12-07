@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
 //引入公共样式即解决移动端默认1像素边框
@@ -18,6 +19,7 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

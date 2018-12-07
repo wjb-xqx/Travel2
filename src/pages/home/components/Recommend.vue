@@ -3,7 +3,8 @@
     <div class="recommend-title">
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item" border-bottom v-for="item in recommendList" :key="item.id" >
+            <router-link tag="li" :to="'/detail/' + item.id" class="item"
+             border-bottom v-for="item in list" :key="item.id" >
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="">
                 </div>    
@@ -12,7 +13,7 @@
                      <p class="item-desc">{{item.desc}}</p>
                      <button class="item-button">查看详情</button>
                 </div>   
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -20,24 +21,11 @@
 <script>
 export default {
     name:'Recommend',
+    props:{
+        list:Array
+    },
     data(){
        return {
-            recommendList:[{
-            id:'0001',
-            imgUrl:'https://imgs.qunarzz.com/p/tts5/1607/26/6de040d36fad6a9a.jpg_r_390x260x90_7a5b94fd.jpg',
-            title:'大连沈亚海洋世界',
-            desc:'浪漫大连首站，浪漫的海洋主题乐园'
-        },{
-            id:'0002',
-            imgUrl:'https://imgs.qunarzz.com/p/tts5/1607/26/6de040d36fad6a9a.jpg_r_390x260x90_7a5b94fd.jpg',
-            title:'大连沈亚海洋世界',
-            desc:'浪漫大连首站，浪漫的海洋主题乐园'
-        },{
-            id:'0003',
-            imgUrl:'https://imgs.qunarzz.com/p/tts5/1607/26/6de040d36fad6a9a.jpg_r_390x260x90_7a5b94fd.jpg',
-            title:'大连沈亚海洋世界',
-            desc:'浪漫大连首站，浪漫的海洋主题乐园'
-        }]
        }
     }
 }
